@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name            PurePC.pl - ciemny wygląd
 @description     Zmienia kolor portalu na ciemny
-@version         1.0.3
+@version         1.0.4
 @namespace       https://greasyfork.org/pl/users/124677-pabli
 @author          Pabli
 @license         CC-BY-NC-4.0
-@homepageURL     https://github.com/pabli24/PurePC-Dark
-@supportURL      https://github.com/pabli24/PurePC-Dark/issues
+@homepageURL     https://greasyfork.org/scripts/395040-purepc-pl-ciemny-wygląd
+@supportURL      https://greasyfork.org/scripts/395040-purepc-pl-ciemny-wygląd/feedback
 @preprocessor    stylus
 @var             checkbox mobile "Mobile" 0
 @var             checkbox sz "Szerokość strony" 0
@@ -33,6 +33,9 @@ body, body#top, .b_home, .b_node, .b_cat {
 .hcat.hcoth {
 	color: #6f6;
 }
+.hcat.hcblue {
+	color: #66f;
+}
 .hcat.hcred, .xcommen span {
 	color: #f66;
 }
@@ -53,7 +56,7 @@ body, body#top, .b_home, .b_node, .b_cat {
 .ln_item h3 a:hover {
 	text-decoration: underline;
 }
-.latest_items {
+.latest_items, .promoitems, .fotopromo {
 	background: #222;
 }
 .nl_item, .sb_list {
@@ -99,6 +102,15 @@ p.cyt, h3.cyt {
 p.recenzja, h3.recenzja {
 	color: #349dff;
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFHklEQVRIx41V32sTSxg9MzsbKU1DQUFRRLwiFIoUodCiiChcQYQUxBSJjSEPShsilCBJxVIi+HD7qPgg/gM+RKk/UESi4I+HJs1tqg/Sh5qtD1q3VitKpd3dmc8Hmbmx917agWVhZ3fP+eac73yMiLDWUkqBcw4AkFLCsiyzt337djp06BC6u7vR3NyMt2/f4vHjx3jx4gWzbRsAwNYDQkRgjCEIAgghzPNkMklnzpxBU1PTb/ucc5RKJQwMDLDm5ua1QTSAXr7vw7Zt5PN5isVisCwLvu+Dcw7GGJRSsCwLUkpMTk4ilUqxdVUC4LcqcrkcxWIxcM5BRPj48SOePHmCb9++oaOjA/v27YNt2/B9H4VCYe1KGjUgIoyMjFA0GoVlWRBC4Pnz5ygUCqMLCwtDRAQpJUZHR+nIkSMQQqBWq4GvVYFlWVBKYWlpCYVCgaLRKGzbBhHh5cuXGBkZ+XNhYWFIkxBC4P79+7BtG0EQoLW1FWI9R0VE2L17N+3ZsweO4+DAgQPgnCOVSrF0Om3cxzlHEAQgIiilwBgDY2x9IJxzvH//nhGR+ZHWRz/TBrEsCz09PQb406dP/4Cs9r/+qKOjg2KxGNra2mBZFjjnqFQquHXrFqanp5l2nn4/mUzSuXPnQEQgIoyNjYEppQyb1c2XyWQomUxCCGHY+76PUCiE5eVlXLp0CQ8ePGC62lOnTlE2mzXaTE1NIR6P/9vCmtHQ0BD19vaaCpVS5ug0Kc/z0N7ezsLhMPr7++ns2bOG5OzsLNLp9N/z8/OdXFei7ccYw4ULFygej0MpBdu28ebNG1y8eBGJRGL08uXL+PDhA6SUqFarCIfDSCQSlEqlIISA53lwHAfZbBau63Ya5vryPA/Dw8NUqVSoVqtRtVqlK1eu0MrKCj5//gwpJYgI8/Pz6OzsJM45JZNJqtVqND4+TpVKhcbGxmjLli2kHaaU+iW4UgpBECCbzVK5XKbXr1/T+Pg4Xb9+nZaWlnDixAl69uwZ3bx5k/bv308Aql++fMHg4CBNTEwYUsVikbZu3UpSSqysrBjyRpN8Pk/xeNz4fHJyEidPnmSRSATFYpF27txptHFdF01NTWhpaTGWdhwH+XwejuMYx0kpf/UPESEej1MsFoPnebAsCxMTE+jr62ORSAQAcOPGDRN+RITNmzcjHA4bR9brdWQymeLs7KwB0EHJGAPbtm0bFYtFhEIhEBHK5TKGh4d3LS4u1hvd1tXVRX19fWhra0NLSwt834frunj06BFu3769a3Fxsa6tr78xCX769GmampqicrlMd+7coa9fv5pY0ELruxZy48aNf7W2tv4hpTTHq7VtNJK+RHd3t3mxVCqhp6fHNJ4unXOOdDpNO3bswNOnT9He3o65ubk855zpGaOPRrNvnKYiEolASolQKITv37+bnzbGTSKRoGw2iw0bNuDw4cOYm5tDLpczLaDH7H8NOQDgMzMzEEJAKYW9e/caBvqIEokEnT9/Howx/PjxA47jYHBwENPT0wwAGoVeHU/auayrq4uuXbtmNkqlEh4+fIggCHD06FEcO3bMADuOg/7+/qLrur2NAq+OJe0svZjnebh69SodPHgQQggsLy/Dtm0zp3V2zczMIJfLoV6vs8ZJqQmsBmsc2dy2bQwMDLByuWwSVpeus+vVq1fIZDLFd+/e/Qag50ejfo1RpWeO6XjP83D8+HGKRqPYtGkTAMB1Xdy7dw93795loVDof4Vda/0EKidkyVkttX0AAAAASUVORK5CYII=") top left no-repeat transparent;
+}
+p.cyt *, h3.cyt *,
+p.cyt_m *,h3.cyt_m *,
+p.cyt_c *,h3.cyt_c *,
+p.recenzja *, h3.recenzja * {
+    color: inherit !important;
+}
+.node a {
+	color: #f66;
 }
 .authorx img {
 	filter: opacity(0.65);
@@ -166,8 +178,11 @@ span[style*="color: #222"],
 span[style*="color: #222222"] {
 	color: #ddd !important;
 }
-.comm_report, .comm_uchide {
-	color: #ff4848;
+.comm_report, .comm_uchide, #comments .new, .comment .submitted.red a, .commrate .crv.cv0, #comment-form p.messages a, #reportbug {
+	color: #f44;
+}
+.comment-new {
+	border-left: 2px solid #f44;
 }
 select, input, textarea, input[type=text], input[type=password] {
 	background: #1d1d1d;
