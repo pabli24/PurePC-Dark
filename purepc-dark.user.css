@@ -133,6 +133,18 @@ table.specy tr:nth-child(odd) td {
 table.specy tr:first-child td {
 	background: #6c0505 !important;
 }
+table.fotospecy tr td {
+	border: 1px solid #121212 !important;
+}
+table.fotospecy tr:nth-child(even) td {
+	background: #2a2a2a !important;
+}
+table.fotospecy tr:nth-child(odd) td {
+	background: #343434 !important;
+}
+table.fotospecy tr:first-child td {
+	background: #6c0505 !important;
+}
 .comment:hover, .comment .links {
 	background: #202020!important;
 }
