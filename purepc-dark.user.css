@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name            PurePC.pl - ciemny wygląd
 @description     Zmienia kolor portalu na ciemny oraz pozwala zmienić szerokość strony
-@version         1.0.6
+@version         1.0.7
 @namespace       https://greasyfork.org/pl/users/124677-pabli
 @author          Pabli
 @license         CC-BY-NC-4.0
@@ -121,27 +121,19 @@ p.recenzja *, h3.recenzja * {
 .authorx img:hover {
 	filter: opacity(1);
 }
-table.specy tr td {
-	border: 1px solid #121212 !important;
-}
-table.specy tr:nth-child(even) td {
-	background: #2a2a2a !important;
-}
-table.specy tr:nth-child(odd) td {
-	background: #343434 !important;
-}
-table.specy tr:first-child td {
-	background: #6c0505 !important;
-}
+table.specy tr td,
 table.fotospecy tr td {
 	border: 1px solid #121212 !important;
 }
+table.specy tr:nth-child(even) td,
 table.fotospecy tr:nth-child(even) td {
 	background: #2a2a2a !important;
 }
+table.specy tr:nth-child(odd) td,
 table.fotospecy tr:nth-child(odd) td {
 	background: #343434 !important;
 }
+table.specy tr:first-child td,
 table.fotospecy tr:first-child td {
 	background: #6c0505 !important;
 }
