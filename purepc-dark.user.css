@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name            PurePC.pl - ciemny wygląd
 @description     Zmienia kolor portalu na ciemny oraz pozwala zmienić szerokość strony
-@version         1.0.7
+@version         1.1.0
 @namespace       https://greasyfork.org/pl/users/124677-pabli
 @author          Pabli
 @license         CC-BY-NC-4.0
@@ -11,6 +11,10 @@
 @var             checkbox sz     "Szerokość strony"                 0
 @var             number   szer   "Szerokość strony (px)"            1200
 @var             checkbox dmbtn  "Ukryj przycisk do zmiany motywów" 1
+@var             checkbox navbox "Odepnij górną belkę"              0
+@var             checkbox promo  "Ukryj kafelki na górze"           0
+@var             checkbox fpromo "Ukryj kafelki pomiędzy newsami"   0
+@var             checkbox ap     "Ukryj newsy 'Akcja partnerska'"   0
 ==/UserStyle== */
 
 @-moz-document url-prefix("https://www.purepc.pl") {
@@ -219,8 +223,8 @@ select, input:not(.dmbtn), textarea, input[type=text], input[type=password] {
 	background: #2d2d2d;
 }
 .dark ul.pager li.pager-current {
-    background: #c33;
-    color: #fff;
+	background: #c33;
+	color: #fff;
 }
 ul.pager li a, ul.pager li, .dark ul.pager li, .dark ul.pager li a {
 	background: #3c3c3c;
@@ -252,7 +256,36 @@ div.content.clear-block > ul.pager > li.pager-ellipsis {
 	border-bottom: 1px solid #333;
 }
 .copy_box {
-    color: #fff;
+	color: #fff;
+}
+
+/* Odepnij górną belkę */
+if navbox {
+	.navbox.sticky {
+		display: none;
+	}
+}
+/* Ukryj kafle na górze */
+if promo {
+	.promo {
+		display: none;
+	}
+}
+/* Ukryj Minirecenzje Felietony Więcej artykułów na PurePC TOP10 Poradniki Jeszcze więcej artykułów na PurePC */
+if fpromo {
+	.fotopromo, .fotopromo_head {
+		display: none;
+	}
+}
+/* Ukryj newsy Akcja partnerska */
+if ap {
+	.ln_item:has([href="/newsy/akcja_partnerska"]),
+	.nl_item:has([href="/newsy/akcja-partnerska"]) {
+		display: none;
+	}
+	.ln_item:nth-child(odd) {
+		clear: none;
+	}
 }
 if sz {
 	szer = szer - 1000
