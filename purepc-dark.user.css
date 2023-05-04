@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name            PurePC.pl - ciemny wygląd
 @description     Zmienia kolor portalu na ciemny oraz pozwala zmienić szerokość strony
-@version         1.1.1
+@version         1.1.2
 @namespace       https://greasyfork.org/pl/users/124677-pabli
 @author          Pabli
 @license         CC-BY-NC-4.0
@@ -125,24 +125,32 @@ p.recenzja *, h3.recenzja * {
 .authorx img:hover {
 	filter: opacity(1);
 }
-table.specy tr td,
+table.basic tr td,
 table.fotospecy tr td,
-table.fotospecy2 tr td {
+table.fotospecy2 tr td,
+table.specy tr td,
+table.platforma tr td {
 	border: 1px solid #121212 !important;
 }
-table.specy tr:nth-child(even) td,
+table.basic tr:nth-child(even) td,
 table.fotospecy tr:nth-child(even) td,
-table.fotospecy2 tr:nth-child(even) td {
+table.fotospecy2 tr:nth-child(even) td,
+table.specy tr:nth-child(even) td,
+table.platforma tr:nth-child(even) td {
 	background: #2a2a2a !important;
 }
-table.specy tr:nth-child(odd) td,
+table.basic tr:nth-child(odd) td,
 table.fotospecy tr:nth-child(odd) td,
-table.fotospecy2 tr:nth-child(odd) td {
+table.fotospecy2 tr:nth-child(odd) td,
+table.specy tr:nth-child(odd) td,
+table.platforma tr:nth-child(odd) td {
 	background: #343434 !important;
 }
-table.specy tr:first-child td,
+table.basic tr:first-child td,
 table.fotospecy tr:first-child td,
-table.fotospecy2 tr:first-child td {
+table.fotospecy2 tr:first-child td,
+table.specy tr:first-child td,
+table.platforma tr:first-child td {
 	background: #6c0505 !important;
 }
 .comment:hover, .comment .links {
